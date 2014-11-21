@@ -1,0 +1,60 @@
+__author__ = 'Atharv Sonwane'
+
+print("Welcome to Negotiating with Bob! \n")
+print("Bob is offering you £ 100,000 for your his \n")
+
+pay=int(input("Bob: What are you willing to pay? "))
+price=100000
+success=False
+
+def yorn(again):
+    if again=="y" or again=="Y" or again=="":
+            again=True
+    elif again=="n" or again=="N":
+        again=False
+    else:
+        print("[Y/n]")
+
+def process(pay):
+
+    if pay > price:
+        print("Bob: You are mad!  But I accept your offer\n")
+        success=False
+    elif (pay*1.5) < price:
+        print("Bob: Who do you think you are? I do not accept")
+        print("Bob walks away\n")
+        success=False
+    elif (price*1.5) < pay < (price*1.25):
+        again=input("Bob: No, do you want to go again [Y/n]?")
+        yorn(again)
+    elif (price*1.24) < pay < (price*1.10):
+        again=input("Bob: I can't accept that but I can offer you the pacage for " + str(price*0.95) + ". Do you accept [Y/n]? \n")
+        yorn(again)
+        def functone(again):
+            if again:
+                success=True
+                pay=pay*0.95
+            elif again==False:
+                success=False
+            else:
+                print("Error, excpected boolean, got something else\n")
+            functone(again)
+        functone(again)
+    elif (price*1.9) < pay < (price*1):
+        success=True
+    else:
+        print("Please give valid input\n")
+
+def result(success):
+    if success==True:
+        print("Well done, you have sealed the deal with " + str(pay) + " to pay. \n")
+    elif success==False:
+        print("You failed. You could not seal the deal and Bob has walked away\n")
+    else:
+        print("Expected boolean, got something else\n")
+
+process(pay)
+result(success)
+
+print("Thank-you for using Negotiating with Bob!")
+print("Made by Atharv Sonwane")
