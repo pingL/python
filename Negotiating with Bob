@@ -1,60 +1,83 @@
 __author__ = 'Atharv Sonwane'
 
-print("Welcome to Negotiating with Bob! \n")
-print("Bob is offering you £ 100,000 for your his \n")
+import sys
 
-pay=int(input("Bob: What are you willing to pay? "))
-price=100000
-success=False
+def main():
 
-def yorn(again):
-    if again=="y" or again=="Y" or again=="":
-            again=True
-    elif again=="n" or again=="N":
-        again=False
-    else:
-        print("[Y/n]")
+    go_again=True
 
-def process(pay):
+    while go_again==True:
+    
+        print("Welcome to Negotiating with Bob! \n")
+        print("Bob is offering at product which he has pricesd at £ 100,000 \n")
 
-    if pay > price:
-        print("Bob: You are mad!  But I accept your offer\n")
+        pay=int(input("Bob says - What are you willing to pay? "))
+        price=100000
         success=False
-    elif (pay*1.5) < price:
-        print("Bob: Who do you think you are? I do not accept")
-        print("Bob walks away\n")
-        success=False
-    elif (price*1.5) < pay < (price*1.25):
-        again=input("Bob: No, do you want to go again [Y/n]?")
-        yorn(again)
-    elif (price*1.24) < pay < (price*1.10):
-        again=input("Bob: I can't accept that but I can offer you the pacage for " + str(price*0.95) + ". Do you accept [Y/n]? \n")
-        yorn(again)
-        def functone(again):
-            if again:
-                success=True
-                pay=pay*0.95
-            elif again==False:
-                success=False
+    
+        def yorn(again):
+            if again=="y" or again=="Y" or again=="":
+                again=True
+            elif again=="n" or again=="N":
+                again=False
             else:
-                print("Error, excpected boolean, got something else\n")
-            functone(again)
-        functone(again)
-    elif (price*1.9) < pay < (price*1):
-        success=True
-    else:
-        print("Please give valid input\n")
+                print("[Y/n]")
 
-def result(success):
-    if success==True:
-        print("Well done, you have sealed the deal with " + str(pay) + " to pay. \n")
-    elif success==False:
-        print("You failed. You could not seal the deal and Bob has walked away\n")
-    else:
-        print("Expected boolean, got something else\n")
+        def process(pay):
 
-process(pay)
-result(success)
+            if pay > price:
+                print("Bob says - You are mad!  But I accept your offer\n")
+                success=True
+            elif (price*0.5) > pay:
+                print("Bob says - Who do you think you are? I do not accept")
+                print("Bob walks away\n")
+                success=False
+            elif (price*0.5) <= pay < (price*0.75):
+                again=input("Bob says - No, do you want to go again [Y/n]?")
+                yorn(again)
+                if again:
+                    main()
+                elif again==False:
+                    exit(main)
+            elif (price*0.75) <= pay < (price*0.9):
+                again=input("Bob says - I can't accept that but I can offer you the pacage for " + str(price*0.95) + ". Do you accept [Y/n]?")
+                print("")
+                yorn(again)
+                def functone(again):
+                    if again:
+                        success=True
+                        pay=p100ay*0.95
+                    elif again==False:
+                        success=False
+                    else:
+                        print("Error, excpected boolean, got something else\n")
+                    functone(again)
+                functone(again)
+            elif (price*0.9) <= pay <= (price*1):
+                success=True
+            else:
+                print("Please give valid input\n")
+    
+        def result(success):
+            if success==True:
+                print("Well done, you have sealed the deal with " + str(pay) + " to pay. \n")
+            elif success==False:
+                print("You failed. You could not seal the deal and Bob has walked away\n")
+            else:
+                print("Expected boolean, got something else\n")
 
-print("Thank-you for using Negotiating with Bob!")
-print("Made by Atharv Sonwane")
+        process(pay)
+        result(success)
+        
+        print("Thank-you for using Negotiating with Bob!")
+        print("Made by Atharv Sonwane, credits go to all those who have taught him.\n")
+
+        go_again=input("Do you want to go again [Y/n]? ")
+        if go_again=="y" or go_again=="Y" or go_again=="":
+            go_again=True
+        elif go_again=="n" or go_again=="N":
+            go_agin=False
+        else:
+            print("[Y/n]")
+
+main()
