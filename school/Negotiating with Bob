@@ -24,5 +24,5 @@ def main():
             print('You\'re mad, by the way!')
         break
     print("\n Thank-you for playing Negotiation with Bob")
-    print("\n Credits go to Atharv Sonwane and all those who taught him")
+    print("Credits go to Atharv Sonwane and all those who taught him")
 main()
