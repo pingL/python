@@ -1,0 +1,9 @@
+__author__ = "Atharv Sonwane"
+#cgreatest of them all
+
+array = [3,4,5,6,657,54,546]
+cr = array[0]
+for i in array:
+    if i > cr:
+        cr = i
+print(cr)
