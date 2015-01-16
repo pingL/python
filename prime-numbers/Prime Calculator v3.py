@@ -1,3 +1,7 @@
+# Prime Calculator v3
+# Checks a number for primality
+# By Atharv Sonwane and Inigo Rhode
+
 import math
 
 print("Welcome to the Prime Checker v3 \n")
