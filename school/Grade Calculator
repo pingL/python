@@ -1,5 +1,6 @@
-__author__ = "Atharv Sonwane"
-# grade calc
+# Grade Calculator
+# Calculates grades from given mark
+# By Atharv Sonwane
 
 from time import sleep
 import sys
