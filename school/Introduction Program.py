@@ -1,5 +1,6 @@
 # Introduction Program
 # takes the user's name and uses it in conversation with a yes/no question
+# By Atharv Sonwane
 
 yourname=input("May I know your name?")
 print("Hello ", yourname, "! I hope you are OK")
