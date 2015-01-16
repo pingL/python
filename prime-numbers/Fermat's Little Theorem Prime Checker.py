@@ -1,3 +1,7 @@
+# Fermat's Little Theorem Prime Checker
+# Uses Fermat's Little Theorem to check prime numbers
+# By Atharv Sonwane
+
 import random
 print("Welcome to Fermat's Little Theorem Prime Checker\n")
 p=int(input("Which number would you like to test for primality? "))
