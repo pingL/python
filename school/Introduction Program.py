@@ -1,6 +1,5 @@
-__author__ = 'Atharv Sonwane'
-
-# introduction program
+# Introduction Program
+# takes the user's name and uses it in conversation with a yes/no question
 
 yourname=input("May I know your name?")
 print("Hello ", yourname, "! I hope you are OK")
@@ -12,4 +11,4 @@ elif know=="no":
      yourinfo=input("OK, tell me a bit about yourself!")
      print("Thats great")
 else:
-    print("Please start again and make sure you say either yes (small) or no (small")
+    print("Please start again and make sure you say either yes or no.")
