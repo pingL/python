@@ -9,3 +9,8 @@ def leapcheck(num):
         return False
 num = int(input("What number do you want to check?"))
 x = leapcheck(num)
+
+if x:
+ print(str(num)+" is a leap year")
+else:
+ print(str(num)+" is not a leap year")
