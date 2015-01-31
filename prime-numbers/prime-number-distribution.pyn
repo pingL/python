@@ -1,0 +1,26 @@
+import random
+
+no_lim=int(input("Enter the amount of random intergers to check"))
+
+true_primes=0
+not_primes=0
+n=0
+z=2
+ran=random.randint(1,10)
+
+
+
+
+
+while n<no_lim:
+    if (ran%z)==0:
+        true_primes=true_primes+1
+        ran=random.randint(1,10)
+        n=n+1
+        print(ran, "....", true_primes)
+        break
+    else:
+        not_primes=not_primes+1
+    z=z+1
+    n=n+1
+
