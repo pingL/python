@@ -1,0 +1,33 @@
+import random
+from random import randint
+
+operators=("+", "-", "*", "/")
+easy=["Easy", "easy", "EASY", "EAsy"]
+medium=["Medium", "medium", "MEDIUM", "MEdium"]
+hard=["hard", "Hard", "HARD", "HArd"]
+
+print("Welcome to The Maths Question Generator!")
+level=input("How hard do you want the game to be? Easy, Medium or Hard? ")
+noq=int(input("How many question do you want? "))
+count=0
+
+while count<noq+1:
+    if level in easy:
+        randno1=randint(0, 100)
+        randno2=randint(0, 50)
+    elif level in medium:
+        randno1=randint(0,400)
+        randno2=randint(0,100)
+    elif level in hard:
+        randno1=randint(0, 750)
+        randno2=randint(0, 500)
+    else:
+       randno1=randint(0, 100)
+       randno2=randint(0, 50)
+    randop=random.choice(operators)
+    print(randno1, randop, randno2)
+    count = count + 1
+    
+print("Thabk-you for using The Maths Question Generator")
+print("Credits go to Atharv Sonwane and all those who have tought him")
+
